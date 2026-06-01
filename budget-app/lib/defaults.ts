@@ -18,7 +18,7 @@ export const DEFAULT_BUDGET: BudgetState = {
   ],
 
   household: [
-    { label: 'Mortgage / Rent', budgeted: 0, spent: 0 },
+    { label: 'Mortgage / Rent', budgeted: 0, spent: 0, isRecurring: true },
     { label: '2nd Mortgage', budgeted: 0, spent: 0 },
     { label: 'Taxes', budgeted: 0, spent: 0 },
     { label: 'Other', budgeted: 0, spent: 0 },
@@ -26,11 +26,11 @@ export const DEFAULT_BUDGET: BudgetState = {
   ],
 
   utilities: [
-    { label: 'Water', budgeted: 0, spent: 0 },
-    { label: 'Oil', budgeted: 0, spent: 0 },
-    { label: 'Cell / Mobile', budgeted: 0, spent: 0 },
-    { label: 'Internet', budgeted: 0, spent: 0 },
-    { label: 'Cable', budgeted: 0, spent: 0 },
+    { label: 'Water', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Oil', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Cell / Mobile', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Internet', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Cable', budgeted: 0, spent: 0, isRecurring: true },
     { label: 'Other', budgeted: 0, spent: 0 },
   ],
 
@@ -39,23 +39,23 @@ export const DEFAULT_BUDGET: BudgetState = {
     { label: 'Hair / Nails', budgeted: 10, spent: 0 },
     { label: 'Clothing', budgeted: 0, spent: 0 },
     { label: 'Dry Cleaning', budgeted: 0, spent: 0 },
-    { label: 'Gym', budgeted: 37.5, spent: 0 },
+    { label: 'Gym', budgeted: 37.5, spent: 0, isRecurring: true },
     { label: 'Organization Fees', budgeted: 0, spent: 0 },
     { label: 'Child Care', budgeted: 0, spent: 0 },
   ],
 
   insurance: [
-    { label: 'Home', budgeted: 0, spent: 0 },
-    { label: 'Health', budgeted: 0, spent: 0 },
-    { label: 'Life', budgeted: 0, spent: 0 },
-    { label: 'Auto', budgeted: 0, spent: 0 },
+    { label: 'Home', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Health', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Life', budgeted: 0, spent: 0, isRecurring: true },
+    { label: 'Auto', budgeted: 0, spent: 0, isRecurring: true },
   ],
 
   businessTools: [
-    { label: 'LLC', budgeted: 137.5, spent: 0 },
+    { label: 'LLC', budgeted: 137.5, spent: 0, isRecurring: true },
     { label: 'Functions', budgeted: 75, spent: 0 },
     { label: 'Meetings', budgeted: 5, spent: 0 },
-    { label: 'Additional Tools / Ditto', budgeted: 275, spent: 0 },
+    { label: 'Additional Tools / Ditto', budgeted: 275, spent: 0, isRecurring: true },
   ],
 
   recreation: [
@@ -67,7 +67,7 @@ export const DEFAULT_BUDGET: BudgetState = {
   ],
 
   transportation: [
-    { label: 'Fuel / Gas', budgeted: 82.5, spent: 0 },
+    { label: 'Fuel / Gas', budgeted: 82.5, spent: 0, isRecurring: true },
     { label: 'MetroCard', budgeted: 0, spent: 0 },
     { label: 'Train Pass', budgeted: 0, spent: 0 },
     { label: 'Tolls', budgeted: 0, spent: 0 },
@@ -105,4 +105,52 @@ export const DEFAULT_BUDGET: BudgetState = {
     { label: 'Student Loan 2', balance: 0, apy: 0, minPayment: 0 },
     { label: 'Student Loan 3', balance: 0, apy: 0, minPayment: 0 },
   ],
+
+  goals: [
+    {
+      id: '1',
+      name: '3-Month Emergency Fund',
+      targetAmount: 2580,
+      currentAmount: 0,
+      targetDate: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+      category: 'emergency',
+      color: '#10b981',
+    },
+    {
+      id: '2',
+      name: 'Pay Off Credit Card',
+      targetAmount: 500,
+      currentAmount: 0,
+      targetDate: new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+      category: 'debt',
+      color: '#ef4444',
+    },
+    {
+      id: '3',
+      name: 'Business Growth Fund',
+      targetAmount: 1000,
+      currentAmount: 0,
+      targetDate: new Date(Date.now() + 270 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+      category: 'business',
+      color: '#f59e0b',
+    },
+  ],
+
+  assets: [
+    { label: 'Checking Account', value: 0 },
+    { label: 'Savings Account', value: 0 },
+    { label: 'Investment Account', value: 0 },
+    { label: 'Vehicle(s)', value: 0 },
+    { label: 'Other Assets', value: 0 },
+  ],
+
+  liabilities: [
+    { label: 'Credit Card Debt', balance: 0 },
+    { label: 'Student Loans', balance: 0 },
+    { label: 'Vehicle Loans', balance: 0 },
+    { label: 'Other Debt', balance: 0 },
+  ],
+
+  scenarioIncomeChange: 0,
+  scenarioExpenseChange: 0,
 };
